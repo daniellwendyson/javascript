@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nacionalidade</title>
+    <style>
+        div#ibotao {
+            padding-top: 10px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Brasileiro ou estrangeiro?</h1>
+    Em que país nasceu? <input type="text" name="pais" id="ipais">
+    <div id="ibotao">
+        <input type="button" value="Enviar" onclick="checar()">
+    </div>
+    <div id="ires">
+
+    </div>
+    <script>
+        function checar() {
+            var txtpais = window.document.getElementById('ipais');
+            var res = window.document.getElementById('ires');
+            var pais = txtpais.value;
+            res.innerHTML = `<p>Seu país de origem é: ${pais}</p>`;
+            if (pais == 'Brasil' || pais == 'brasil') {
+                res.innerHTML += `<p>Você é brasileiro!</p>`;
+            }else {
+                res.innerHTML += `<p>Você é estrangeiro!</p>`
+            }
+        }
+    </script>
+</body>
+</html>
